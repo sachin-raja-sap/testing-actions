@@ -48,7 +48,6 @@ func TestCreateUser(t *testing.T) {
 	assert.Equal(t, http.StatusCreated, rec.Code)
 	// Check if the body contains the user data (assuming JSON output includes user array)
 	assert.Contains(t, rec.Body.String(), "testuser")
-
 	// Reset users for consistent test results
 	users = []User{}
 }
