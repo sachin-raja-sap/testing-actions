@@ -17,5 +17,7 @@ VNUM3=$((VNUM3+1))
 
 # Create new tag
 NEW_TAG="v$VNUM1.$VNUM2.$VNUM3"
+git tag "$NEW_TAG"
+git push origin "$NEW_TAG"
 
 echo "$NEW_TAG"
