@@ -8,12 +8,12 @@ jobs:
   Patch:
     runs-on: ubuntu-latest
     steps:
-    - uses: actions/checkout@v2
+    - uses: actions/checkout@v4
       with:
         fetch-depth: '0'
     - name: Minor version for each merge
       id: taggerDryRun
-      uses: anothrNick/github-tag-action@1.36.0
+      uses: anothrNick/github-tag-action@1.8.0
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         WITH_V: true
@@ -30,7 +30,7 @@ jobs:
         echo "The version increment was: ${{ steps.taggerDryRun.outputs.part }}"
     - name: Minor version for each merge
       id: taggerFinal
-      uses: anothrNick/github-tag-action@1.36.0
+      uses: anothrNick/github-tag-action@1.8.0
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         WITH_V: true
